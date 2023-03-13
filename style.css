@@ -224,3 +224,10 @@
         align-self: center;
     }
 }
+
+
+.attribution{
+    position: absolute;
+    bottom: 0;
+
+}

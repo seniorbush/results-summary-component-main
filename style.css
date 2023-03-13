@@ -1,0 +1,226 @@
+/*      
+    Important Testing Info
+    - Mobile: 375px
+    - Desktop: 1440px 
+*/
+
+:root{
+    /* Summary */
+    --primary-red: hsl(0, 100%, 67%);
+    --primary-orangey-yellow: hsl(39, 100%, 56%);
+    --primary-green-teal: hsl(166, 100%, 37%);
+    --primary-cobalt-blue: hsl(234, 85%, 45%);
+
+    /* Gradients */
+    --gradients-light-slate-blue: hsl(252, 100%, 67%);
+    --gradients-light-royal-blue: hsl(241, 81%, 54%);
+
+    --gradients-violet-blue: hsla(256, 72%, 46%, 1);
+    --gradients-persian-blue: hsla(241, 72%, 46%, 0);
+    /* Neutral */
+
+    --neutral-white: hsl(0, 0%, 100%);
+    --neutral-pale-blue: hsla(221, 100%, 96%, 65%);
+    --neutral-lavender: hsla(241, 100%, 89%, 95%);
+    --neutral-dark-gray-blue: hsl(224, 30%, 27%);
+
+    /* Font */
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-size: 18px;
+}
+
+.body{
+    /* Removal of Default stlying */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    box-shadow:  5px 10px 10px 10px hsla(221, 100%, 96%, 30%);
+    border-radius: 15px;
+    color: var(--neutral-white);
+    max-width: 100%;
+}
+
+
+/* Left Side */
+
+.left{
+    background-image: linear-gradient(var(--gradients-light-slate-blue), var(--gradients-light-royal-blue));
+    min-width: 50%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--neutral-pale-blue);
+    padding-bottom: 20px;
+}
+
+.score-circle{
+    padding: 20px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-image: linear-gradient(var(--gradients-violet-blue), var(--gradients-persian-blue));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#main-number{
+    font-size: 48px;
+    color: var(--neutral-white);
+    font-weight: 700;
+    margin: 0;
+}
+
+#secondary-number{
+    margin: 0;
+}
+
+.bottom-text{
+    text-align: center;
+    width: 70%;
+}
+
+.bottom-text h3{
+    font-weight: 700;
+    color: var(--neutral-white);
+    margin: 0;
+
+}
+
+.left p{
+    text-align: center;
+    font-size: 12px;
+}
+
+
+
+/* Right Side */
+
+.right{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--neutral-dark-gray-blue);
+    padding: 20px;
+    margin-right: 10px;
+    
+}
+
+
+.item{
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
+    font-size: 12px;
+    padding-right: 10px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.item-left{
+    display: flex;
+}
+
+.item-left img{
+    width: 14px;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.item-right::after{
+    content: " / 100";
+    color: hsla(224, 30%, 27%, 50%);
+}
+
+#reaction{
+    background-color: hsla(0, 100%, 67%, 10%);
+}
+#reaction-inner{
+    color: var(--primary-red);
+}
+
+#memory{
+    background-color: hsla(39, 100%, 56%, 10%);
+}
+#memory-inner{
+    color: var(--primary-orangey-yellow);
+}
+#verbal{
+    background-color: hsla(166, 100%, 37%, 10%);
+}
+#verbal-inner{
+    color: var(--primary-green-teal);
+}
+
+#visual{
+    background-color: hsla(234, 85%, 45%, 10%);
+}
+#visual-inner{
+    color: var(--primary-cobalt-blue);
+}
+
+.right button{
+    color: var(--neutral-pale-blue);
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 4px;
+    min-width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    color: hsla(221, 100%, 96%, 90%);
+    background-color: var(--neutral-dark-gray-blue);
+    transition: ease-in-out .3s;
+}
+
+.right button:hover{
+    cursor: pointer;
+    background-image: linear-gradient(var(--gradients-light-slate-blue), var(--gradients-light-royal-blue));
+}
+
+@media (max-width: 375px){
+    .container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 85vw;
+    }
+    .left{
+        width: 100vw;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+    }
+    .left p{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .right{
+        width: 100%;   
+        padding: 0;
+        padding-bottom: 20px;
+        padding-right: 5px;
+
+    }
+    .right button{
+        width: 103%;
+    }
+    .right{
+        align-self: center;
+    }
+}
